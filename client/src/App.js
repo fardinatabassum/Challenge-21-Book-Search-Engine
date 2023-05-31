@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchBooks from "./pages/SearchBooks";
 import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
@@ -13,16 +13,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <Router>
         <>
           <Navbar />
-          <Routes>
-            <Route exact path="/" element={SearchBooks} />
-            <Route exact path="/saved" element={SavedBooks} />
+          <Switch>
+            <Route exact path="/"><SearchBooks/></Route>
+            <Route exact path="/saved"><SavedBooks/></Route>
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-          </Routes>
+          </Switch>
         </>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }

@@ -14,5 +14,15 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.14",
+    "apollo": "^2.34.0",
+    "apollo-server-express": "^2.15.0",
+    "graphql": "^14.7.0",
+    "mongodb": "^5.5.0",
+    "mongoose": "^7.2.1",
+    "nodemon": "^2.0.22",
+    "react-router-dom": "^6.11.2"
   }
 }
